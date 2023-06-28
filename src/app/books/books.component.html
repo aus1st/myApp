@@ -1,17 +1,16 @@
-<h2>books works!</h2>
-
-<button (click)="isShowing= !isShowing">
+<!-- <button class="bg-blue-400 font-black p-3 rounded-lg" (click)=" isShowing=!isShowing">
     <span *ngIf="!isShowing">Show </span>
     <span *ngIf="isShowing">Hide </span>
-    Books</button>
+    Books</button> -->
 
 <!-- 
 <input type="text" [(ngModel)]="inputText"/>
 
 <p>{{inputText}}</p> -->
 
-<ul *ngIf="isShowing">
-    <li *ngFor="let b of books">
+<ul *ngIf="isShowing" class="grid sm:grid-cols-2 gap-5 grid-cols-1 items-center justify-center ">
+
+    <li *ngFor="let b of books" class="text-center list-none">
         <app-book (bookEmitter)="addToCartListner($event)" [book]="b"></app-book>
     </li>
 </ul>

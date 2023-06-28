@@ -1,8 +1,21 @@
-<img [src]="book.imgUrl" [alt]="book.name" width="200" height="auto" />
+<div class="flex rounded-xl border border-gray-400 p-5 items-center h-60">
 
-<div>
-    {{book.name | titlecase}} by {{book.author}}
+    <!-- left side -->
+    <div>
+        <img [src]="book.imgUrl" [alt]="book.name" width="130" height="auto" />
+    </div>
+    <!-- right side -->
+    <div class="text-center ml-20">
+        <div class="max-w-[300px]">
+            {{book.name | titlecase}} by {{book.author}}
 
+        </div>
+
+        <div class="font-bold">Price: {{book.price | currency: 'PKR '}}</div>
+        <div class="mt-10">
+            <button class="p-3 bg-purple-500 text-white rounded-md" *ngIf="!isInCart" (click)="addToCart()">Add to
+                Cart</button>
+            <button *ngIf="isInCart" class="bg-purple-500" (click)="removeItem()">Remove</button>
+        </div>
+    </div>
 </div>
-<div>Price: {{book.price | currency: 'PKR '}}</div>
-<button (click)="addToCart()">Add to Cart</button>

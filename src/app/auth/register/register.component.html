@@ -1,0 +1,37 @@
+<div class="flex h-screen justify-center">
+
+
+    <form (ngSubmit)="submit()" #Regform="ngForm" class="border rounded-lg p-4 m-auto w-1/3">
+        <h1 class="text-xl text-center font-bold">Register</h1>
+        <div class="my-5 w-full">
+            <label for="email">Email</label>
+            <input type="text" id="email" class="p-2 w-full border" [(ngModel)]="form.email" name="email"
+                placeholder="Email Address" #email="ngModel" required>
+            <p *ngIf="email.invalid && (email.touched||email.dirty)" class="text-red-500">Email is Required</p>
+        </div>
+
+
+        <div class="my-5 w-full">
+            <label for="password">Passowrd</label>
+            <input type="password" id="password" class="p-2 w-full border" placeholder="Password"
+                [(ngModel)]="form.password" name="password" #password="ngModel" required>
+            <p *ngIf="password.invalid && (password.touched||password.dirty)" class="text-red-500">Password is Required
+            </p>
+        </div>
+        <div class="my-5 w-full">
+            <label for="password">Confirm Password</label>
+            <input type="password" id="confirmPassword" class="p-2 w-full border" placeholder="Confirm Password"
+                [(ngModel)]="form.confirmPassword" name="confirmPassword" #confirmPassword="ngModel">
+            <p *ngIf="confirmPassword.invalid && (confirmPassword.touched||confirmPassword.dirty)" class="text-red-500">
+                Confirm Password is Required
+            </p>
+        </div>
+        <div class="my-5 w-full">
+
+            <input type="submit" [disabled]="Regform.form.invalid"
+                class="p-2 w-full bg-purple-500 text-white font-semibold rounded-sm hover:bg-purple-950"
+                value="Register">
+        </div>
+    </form>
+
+</div>
