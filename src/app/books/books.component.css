@@ -1,0 +1,14 @@
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-items: center;
+}
+
+ul>li {
+    list-style: none;
+    text-align: center;
+    text-overflow: ellipsis;
+    width: 25%;
+    cursor: pointer;
+}

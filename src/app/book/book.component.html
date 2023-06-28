@@ -1,0 +1,8 @@
+<img [src]="book.imgUrl" [alt]="book.name" width="200" height="auto" />
+
+<div>
+    {{book.name | titlecase}} by {{book.author}}
+
+</div>
+<div>Price: {{book.price | currency: 'PKR '}}</div>
+<button (click)="addToCart()">Add to Cart</button>
